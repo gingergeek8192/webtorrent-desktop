@@ -1,0 +1,12 @@
+allowBuilds:
+  bufferutil: true
+  core-js: true
+  electron: true
+  electron-chromedriver: true
+  electron-winstaller: true
+  fs-xattr: true
+  macos-alias: true
+  protobufjs: true
+  spectron: true
+  utf-8-validate: true
+  utp-native: true
