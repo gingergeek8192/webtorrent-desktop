@@ -20,7 +20,7 @@ function init () {
     maximizable: false,
     minimizable: false,
     resizable: false,
-    show: true,
+    show: false,
     skipTaskbar: true,
     title: 'webtorrent-hidden-window',
     useContentSize: true,

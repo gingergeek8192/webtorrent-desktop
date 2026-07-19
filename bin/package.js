@@ -5,7 +5,7 @@
  */
 
 const cp = require('child_process')
-const electronPackager = require('electron-packager')
+const electronPackager = require('@electron/packager')
 const fs = require('fs')
 const minimist = require('minimist')
 const os = require('os')
@@ -37,8 +37,7 @@ const argv = minimist(process.argv.slice(2), {
 
 function build () {
   console.log('Installing node_modules...')
-  rimraf.sync(NODE_MODULES_PATH)
-  cp.execSync('npm ci', { stdio: 'inherit' })
+  cp.execSync('pnpm install', { stdio: 'inherit' })
 
   console.log('Nuking dist/ and build/...')
   rimraf.sync(DIST_PATH)
@@ -118,7 +117,7 @@ const darwin = {
   platform: 'darwin',
 
   // Build x64 binary only.
-  arch: 'x64',
+  arch: argv.arch,
 
   // The bundle identifier to use in the application's plist (Mac only).
   appBundleId: 'io.webtorrent.webtorrent',
@@ -139,7 +138,7 @@ const win32 = {
   platform: 'win32',
 
   // Build x64 binary only.
-  arch: 'x64',
+  arch: argv.arch,
 
   // Object hash of application metadata to embed into the executable (Windows only)
   win32metadata: {
@@ -265,8 +264,8 @@ function buildDarwin (cb) {
     }
 
     function signApp (cb) {
-      const sign = require('electron-osx-sign')
-      const { notarize } = require('electron-notarize')
+      const sign = require('@electron/osx-sign')
+      const { notarize } = require('@electron/notarize')
 
       /*
        * Sign the app with Apple Developer ID certificates. We sign the app for 2 reasons:
