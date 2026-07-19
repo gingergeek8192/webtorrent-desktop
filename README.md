@@ -21,9 +21,16 @@
 
 ## Apple Silicon (ARM) Build
 
-A pre-built unsigned version for Apple Silicon (M1/M2/M3) Macs is available on the [releases page](https://github.com/gingergeek8192/webtorrent-desktop/releases).
+A pre-built unsigned version for Apple Silicon (M1/M2/M3/M4) Macs is available on the [releases page](https://github.com/gingergeek8192/webtorrent-desktop/releases).
 
-> **Note:** This build is not notarized. On first launch, right-click the app and select **Open**, then click **Open** in the dialog to bypass Gatekeeper.
+> **Note:** This build is unsigned. To run it on modern macOS (Sequoia and later):
+>
+> 1. Run the following in Terminal:
+>    ```
+>    sudo spctl --master-disable
+>    ```
+> 2. Go to **System Settings → Privacy & Security → Allow applications from: Anywhere**
+> 3. Launch the app. If still blocked, return to **System Settings → Privacy & Security** and click **Allow Anyway**.
 
 To build it yourself on an Apple Silicon Mac:
 
