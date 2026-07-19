@@ -21,7 +21,7 @@
 
 ## Apple Silicon (ARM) Build
 
-A pre-built unsigned version for Apple Silicon (M1/M2/M3) Macs is available on the [releases page](https://github.com/webtorrent/webtorrent-desktop/releases).
+A pre-built unsigned version for Apple Silicon (M1/M2/M3) Macs is available on the [releases page](https://github.com/gingergeek8192/webtorrent-desktop/releases).
 
 > **Note:** This build is not notarized. On first launch, right-click the app and select **Open**, then click **Open** in the dialog to bypass Gatekeeper.
 
